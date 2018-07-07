@@ -2,8 +2,11 @@
   "name": "ginit-with-token",
   "version": "0.0.1",
   "description": "git init with token",
-  "main": "index.js",
   "private": false,
+  "preferGlobal": true,
+  "bin": {
+    "ginit-with-token": "index.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Takumon/ginit.git"
