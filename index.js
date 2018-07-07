@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+'use strict';
+
 const chalk = require('chalk');
 const clear = require('clear');
 const figlet = require('figlet');
@@ -5,9 +8,10 @@ const figlet = require('figlet');
 const github = require('./lib/github');
 const repo = require('./lib/repo');
 const files = require('./lib/files');
+const inquirer = require('./lib/inquirer');
 
 clear();
-console.log(chalk.yellow(figlet.textSync('Ginit', { horizontalLayout: 'full' })));
+console.log(chalk.yellow(figlet.textSync('Ginit with token', { horizontalLayout: 'full' })));
 
 if (files.directoryExists('.git')) {
   console.log(chalk.red('Already a git repository!'));
@@ -22,7 +26,7 @@ const getGithubToken = async () => {
     return sotredToken;
   }
 
-  const [token] = await inquirer.askGithubCredentialsWithToken();
+  const { token } = await inquirer.askGithubCredentialsWithToken();
   github.authWithToken(token);
   github.saveGithubToken(token); // 次回以降トークンを入力しないですむように
   return token;
