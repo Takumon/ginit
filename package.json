@@ -1,17 +1,24 @@
 {
-  "name": "ginit",
-  "version": "1.0.0",
-  "description": "git init on steroids",
+  "name": "ginit-with-token",
+  "version": "0.0.1",
+  "description": "git init with token",
   "main": "index.js",
-  "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Takumon/ginit.git"
   },
+  "homepage": "https://github.com/Takumon/ginit/blob/master/README.md",
+  "author": "takumon",
   "keywords": [
     "Git",
     "CLI"
   ],
-  "license": "ISC",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
     "@octokit/rest": "^15.9.4",
     "chalk": "^2.4.1",
@@ -22,7 +29,6 @@
     "inquirer": "^6.0.0",
     "lodash": "^4.17.10",
     "minimist": "^1.2.0",
-    "preferences": "^1.0.2",
     "simple-git": "^1.96.0",
     "touch": "^3.1.0"
   },
